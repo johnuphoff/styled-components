@@ -1,5 +1,4 @@
 // @flow
-import validAttr from '@emotion/is-prop-valid';
 import merge from 'merge-anything';
 import React, { createElement, Component } from 'react';
 import ComponentStyle from './ComponentStyle';
@@ -151,7 +150,7 @@ class StyledComponent extends Component<*> {
         continue;
       } else if (key === 'forwardedRef') propsForElement.ref = computedProps[key];
       else if (key === 'forwardedAs') propsForElement.as = computedProps[key];
-      else if (!isTargetTag || validAttr(key)) {
+      else if (!isTargetTag) {
         // Don't pass through non HTML tags through to HTML elements
         propsForElement[key] = computedProps[key];
       }
