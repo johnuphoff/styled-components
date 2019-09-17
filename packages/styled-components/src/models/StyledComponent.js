@@ -150,8 +150,7 @@ class StyledComponent extends Component<*> {
         continue;
       } else if (key === 'forwardedRef') propsForElement.ref = computedProps[key];
       else if (key === 'forwardedAs') propsForElement.as = computedProps[key];
-      else if (!isTargetTag) {
-        // Don't pass through non HTML tags through to HTML elements
+      else {
         propsForElement[key] = computedProps[key];
       }
     }
