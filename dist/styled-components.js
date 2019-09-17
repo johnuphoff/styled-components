@@ -3591,8 +3591,7 @@
 
         if (key === 'forwardedComponent' || key === 'as') {
           continue;
-        } else if (key === 'forwardedRef') propsForElement.ref = computedProps[key];else if (key === 'forwardedAs') propsForElement.as = computedProps[key];else if (!isTargetTag) {
-          // Don't pass through non HTML tags through to HTML elements
+        } else if (key === 'forwardedRef') propsForElement.ref = computedProps[key];else if (key === 'forwardedAs') propsForElement.as = computedProps[key];else {
           propsForElement[key] = computedProps[key];
         }
       }
